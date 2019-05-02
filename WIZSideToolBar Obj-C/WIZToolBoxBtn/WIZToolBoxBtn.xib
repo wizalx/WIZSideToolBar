@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WIZToolBoxBtn">
+            <connections>
+                <outlet property="contentVIew" destination="iN0-l3-epB" id="aff-Sz-u5a"/>
+                <outlet property="icon" destination="9p3-yA-SdJ" id="H9K-Ay-aUy"/>
+                <outlet property="title" destination="fLM-KI-Wh4" id="GJE-gX-tIo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLM-KI-Wh4">
+                    <rect key="frame" x="0.0" y="36" width="50" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="K2k-MY-AKY"/>
+                        <constraint firstAttribute="width" constant="50" id="Q7R-JY-KUD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSP-To-Hek">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <connections>
+                        <action selector="tapCancel:" destination="-1" eventType="touchCancel" id="C5f-bH-byn"/>
+                        <action selector="tapDown:" destination="-1" eventType="touchDown" id="vEG-cH-KNB"/>
+                        <action selector="tapUp:" destination="-1" eventType="touchUpInside" id="rj6-Wb-zDX"/>
+                        <action selector="tapUpOutside:" destination="-1" eventType="touchUpOutside" id="I3g-qp-Fnu"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9p3-yA-SdJ">
+                    <rect key="frame" x="7" y="0.0" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="1SI-tk-XCc"/>
+                        <constraint firstAttribute="width" constant="36" id="ukS-dS-9ep"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="hSP-To-Hek" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="JWs-Rn-irr"/>
+                <constraint firstItem="fLM-KI-Wh4" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="W80-78-XAH"/>
+                <constraint firstItem="fLM-KI-Wh4" firstAttribute="top" secondItem="9p3-yA-SdJ" secondAttribute="bottom" id="WRo-8F-bXI"/>
+                <constraint firstItem="hSP-To-Hek" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bjQ-ac-QiN"/>
+                <constraint firstItem="hSP-To-Hek" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="dLZ-XG-YCN"/>
+                <constraint firstItem="9p3-yA-SdJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="m1g-N1-bt8"/>
+                <constraint firstItem="fLM-KI-Wh4" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="re0-t5-PhT"/>
+                <constraint firstItem="fLM-KI-Wh4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wDh-Nt-mh5"/>
+                <constraint firstItem="9p3-yA-SdJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="yLU-8F-azd"/>
+                <constraint firstItem="hSP-To-Hek" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="zYK-xl-UyY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.59999999999999" y="152.02398800599701"/>
+        </view>
+    </objects>
+</document>
