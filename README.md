@@ -15,11 +15,11 @@ HOW TO USE
 
 2. Add <WIZSideToolBarDelegate> to @intreface
 
-3. Add ToolBox to screen
+3. Add ToolBox to screen with Background Color
 
 ~~~~
 self.delegate = self;
-[self addWIZSideToolBar];
+[self addWIZSideToolBarWithBgColor:[UIColor blackColor]];
 ~~~~
 
 4. Create buttons in the delegate method, for example

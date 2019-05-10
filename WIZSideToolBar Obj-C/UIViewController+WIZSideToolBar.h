@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (WIZSideToolBar)
 
--(void)addWIZSideToolBar;
+-(void)addWIZSideToolBarWithBgColor:(UIColor*)bgColor;
 @property (nonatomic) id <WIZSideToolBarDelegate> delegate;
 
 //@property (nonatomic, readonly) UIView *barView;
