@@ -109,20 +109,20 @@ static char const * const delegateKey = "delegateKey";
 
 #pragma mark - add bar
 
--(void)addWIZSideToolBar
+-(void)addWIZSideToolBarWithBgColor:(UIColor*)bgColor
 {
-    //    NSArray <WIZToolBarButton*> *toolBarButtons = [self.delegate WIZSideToolBarButtonImages];
-    [self.view addSubview:[self createTongueView]];
-    [self.view addSubview:[self toolBoxView]];
+//    NSArray <WIZToolBarButton*> *toolBarButtons = [self.delegate WIZSideToolBarButtonImages];
+    [self.view addSubview:[self createTongueViewWithColor:bgColor]];
+    [self.view addSubview:[self toolBoxViewWithColor:bgColor]];
 }
 
--(UIView*)createTongueView
+-(UIView*)createTongueViewWithColor:(UIColor*)bgColor
 {
     float widthScreen = [UIScreen mainScreen].bounds.size.width;
     float heightScreen = [UIScreen mainScreen].bounds.size.height;
     
     UIView *tongueView = [[UIView alloc] initWithFrame:CGRectMake(10*(widthScreen/11), self.navigationController ? heightScreen/2 - 110 : heightScreen/2 - 50, widthScreen/11, 100)];
-    tongueView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:1];
+    tongueView.backgroundColor = bgColor;
     
     tongueView.tag = 7805;
     
@@ -135,6 +135,15 @@ static char const * const delegateKey = "delegateKey";
     maskLayer.frame = tongueView.bounds;
     maskLayer.path  = maskPath.CGPath;
     tongueView.layer.mask = maskLayer;
+    
+    CAShapeLayer *borderLayer = [[CAShapeLayer alloc] init];
+    borderLayer.frame = tongueView.bounds;
+    borderLayer.path  = maskPath.CGPath;
+    borderLayer.lineWidth   = 1.0f;
+    borderLayer.strokeColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5].CGColor;
+    borderLayer.fillColor   = [UIColor clearColor].CGColor;
+    
+    [tongueView.layer addSublayer:borderLayer];
     
     //add lines
     int countLine = 3;
@@ -161,7 +170,7 @@ static char const * const delegateKey = "delegateKey";
     
 }
 
--(UIView*)toolBoxView
+-(UIView*)toolBoxViewWithColor:(UIColor*)bgColor
 {
     NSArray <WIZToolBarButton*> *toolBarButtons = [self.delegate WIZSideToolBarButtonImages];
     float widthScreen = [UIScreen mainScreen].bounds.size.width;
@@ -172,7 +181,7 @@ static char const * const delegateKey = "delegateKey";
     calculateHeightBarView = calculateHeightBarView >= 100 ? calculateHeightBarView : 100;
     
     UIView *barView = [[UIView alloc] initWithFrame:CGRectMake(widthScreen,  self.navigationController ? heightScreen/2 - calculateHeightBarView/2 - 60 : heightScreen/2 - calculateHeightBarView/2, 55, calculateHeightBarView)];
-    barView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:1];
+    barView.backgroundColor = bgColor;
     barView.tag = 8951;
     
     barView.layer.zPosition = 1000;
@@ -186,6 +195,7 @@ static char const * const delegateKey = "delegateKey";
         
         btnView.tapBlock = ^{
             [self.delegate WIZSideToolBarTapButton:i];
+            [self showToolBar];
         };
     }
     
@@ -214,7 +224,7 @@ static char const * const delegateKey = "delegateKey";
             self.barView.frame = [self showenToolBarFrame];
             self.tongueView.frame = [self showenTongueViewFrame];
         }];
-        
+
     }
 }
 
