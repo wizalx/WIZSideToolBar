@@ -81,8 +81,8 @@
 
 - (IBAction)tapUp:(id)sender {
     self.contentVIew.backgroundColor = [UIColor clearColor];
-    if (_tapBlock)
-        _tapBlock();
+        if (_tapBlock)
+            _tapBlock();
 }
 
 - (IBAction)tapCancel:(id)sender {

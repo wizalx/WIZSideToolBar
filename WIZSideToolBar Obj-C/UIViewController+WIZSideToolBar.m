@@ -164,7 +164,15 @@ static char const * const delegateKey = "delegateKey";
     
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showToolBar)];
+    
+    UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showToolBar)];
+    leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showToolBar)];
+    rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
+    
     [tongueView addGestureRecognizer:tapGesture];
+    [tongueView addGestureRecognizer:leftSwipe];
+    [tongueView addGestureRecognizer:rightSwipe];
     
     return tongueView;
     
